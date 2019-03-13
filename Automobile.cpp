@@ -27,8 +27,7 @@ bool operator==( const Automobile& lhs, const Automobile& rhs ) {
   /// To be completed:
   ///   Return true if each attribute of the left hand side (lhs) is
   ///   equal to the right hand side (rhs)
-  . . .
-  ///
+return (lhs.color_ == rhs.color_ && lhs.brand_ == rhs.brand_ && lhs.model_ == rhs.model_ && lhs.plateNumber_ == rhs.plateNumber_ );
 }
 
 
@@ -38,10 +37,10 @@ bool operator!=( const Automobile& lhs, const Automobile& rhs )
 
 
 
-std::ostream & operator<<( std::ostream& stream, const Automobile& vehicle )
+std::ostream &operator<<( std::ostream& stream, const Automobile& vehicle )
 {
   /// To be completed:
   ///   Insert the vehicle's color, brand, model, and license plate number into the stream, then return the stream
-  . . .
-  ///
+  stream << vehicle.color_ << " " << vehicle.brand_ << " " <<  vehicle.model_ << " " << vehicle.plateNumber_ << std::endl;
+  return stream;
 }

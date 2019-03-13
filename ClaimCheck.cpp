@@ -19,7 +19,7 @@ ClaimCheck::ClaimCheck( const Automobile & vehicle )
     /// To be completed:
     ///   Initialize claimNumber_ to the next available claim number while
     ///   post-incrementing the next available claim number
-    . . .
+    claimNumber_(nextAvailableClaimNumber++)
     ///
 {}
 
@@ -39,10 +39,10 @@ size_t ClaimCheck::claimNumber() const
 ** Non-member function definitions
 *******************************************************************************/
 bool operator==( const ClaimCheck & lhs, const ClaimCheck & rhs )
-{ 
+{
   /// To be completed:
-  ///   Two claim checks are equal if they have equal claim check numbers.   
-  . . .
+  ///   Two claim checks are equal if they have equal claim check numbers.
+return (lhs.claimNumber_ == rhs.claimNumber_);
   ///
 }
 
@@ -57,6 +57,7 @@ std::ostream & operator<<( std::ostream & stream, const ClaimCheck & ticket )
 {
   /// To be completed:
   ///   insert the ticket's vehicle and claim number into the stream then return the stream
-  . . .
+  stream << ticket.vehicle_ << " " << ticket.claimNumber_ << std::endl;
+  return stream;
   ///
 }
